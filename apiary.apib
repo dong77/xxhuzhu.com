@@ -27,7 +27,7 @@ A program has a `maxMaturingPeriod` indicating how many days
 + Response 200 (application/json)
 
         [{
-          "id": 12345, // the unique id
+          "id": 11, // the unique id
           "name": "Lung Cancer",
           "open": true,
           "mature": false,
@@ -36,22 +36,23 @@ A program has a `maxMaturingPeriod` indicating how many days
           "maxMaturingPeriod": 365,
           "terms": "the terms in markdown",
           "termsVer": 1.0,
-          "group": "Recommended",
+          "groups": "Recommended, Default",
           "tags": ["Cancer", "Female"]
         }, {
-          "id": 2, "title": "Pick-up posters from post-office"
+          "id": 12, // the unique id
+          "name": "Head Cancer",
+          "open": true,
+          "mature": true,
+          "matureThreshold": 10000,
+          "immatureThreshold": 5000,
+          "maxMaturingPeriod": 365,
+          "terms": "the terms in markdown",
+          "termsVer": 1.0,
+          "groups": "Recommended, Default",
+          "tags": ["Cancer", "Female"]
         }]
 
-### Create a Note [POST]
-+ Request (application/json)
-
-        { "title": "Buy cheese and bread for breakfast." }
-
-+ Response 201 (application/json)
-
-        { "id": 3, "title": "Buy cheese and bread for breakfast." }
-
-## Note [/notes/{id}]
+## Programs [/program/{id}]
 A single Note object with all its details
 
 + Parameters
