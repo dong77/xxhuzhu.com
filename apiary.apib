@@ -1,5 +1,5 @@
 FORMAT: 1A
-HOST: http://www.xxhuzhu.com
+HOST: http://api.xxhuzhu.com
 
 # xxhuzhu API
 Draft version of xxhuzhu APIs. These APIs will be used by xxhuzhu iOS App.
@@ -20,6 +20,8 @@ the `mature` status shall become true.
 A program has a `immatureThreshold`, once the number of qualified members goes below this number, 
 the `mature` status shall become false.
 
+A program has a `maxMaturingPeriod` indicating how many days
+
 ## Programs [/programs]
 ### Get the summary of all programs [GET]
 + Response 200 (application/json)
@@ -27,7 +29,15 @@ the `mature` status shall become false.
         [{
           "id": 12345, // the unique id
           "name": "Lung Cancer",
-          "status": "mature"
+          "open": true,
+          "mature": false,
+          "matureThreshold": 10000,
+          "immatureThreshold": 5000,
+          "maxMaturingPeriod": 365,
+          "terms": "the terms in markdown",
+          "termsVer": 1.0,
+          "group": "Recommended",
+          "tags": ["Cancer", "Female"]
         }, {
           "id": 2, "title": "Pick-up posters from post-office"
         }]
