@@ -4,7 +4,9 @@ HOST: http://api.xxhuzhu.com
 # xxhuzhu API
 Draft version of xxhuzhu APIs. These APIs will be used by xxhuzhu iOS App.
 
-#Programs
+# Group Programs
+
+##Programs [/programs]
 
 A program is the smallest unit that a member can enroll. Once a member enrolls a program, 
 the member will be resposible for taking care of members in the same program who are 
@@ -22,7 +24,7 @@ the `mature` status shall become false.
 
 A program has a `maxMaturingPeriod` indicating how many days
 
-## Programs [/programs]
+## Programs[/programs]
 ### Get the summary of all programs [GET]
 + Response 200 (application/json)
 
@@ -52,7 +54,7 @@ A program has a `maxMaturingPeriod` indicating how many days
           "tags": ["Cancer", "Female"]
         }]
 
-### Retrieve a Program [/program/{id}]
+## Retrieve a Program[/program/{id}]
 A single Note object with all its details
 
 + Parameters
@@ -63,11 +65,22 @@ A single Note object with all its details
 
     + Header
 
-            X-My-Header: The Value
 
     + Body
 
-            { "id": 2, "title": "Pick-up posters from post-office" }
+            {
+              "id": 11, // the unique id
+              "name": "Lung Cancer",
+              "open": true,
+              "mature": false,
+              "matureThreshold": 10000,
+              "immatureThreshold": 5000,
+              "maxMaturingPeriod": 365,
+              "terms": "the terms in markdown",
+              "termsVer": 1.0,
+              "groups": "Recommended, Default",
+              "tags": ["Cancer", "Female"]
+            }
 
 ### Remove a Note [DELETE]
 + Response 204
