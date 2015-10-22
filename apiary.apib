@@ -4,16 +4,19 @@ HOST: http://www.xxhuzhu.com
 # xxhuzhu API
 Draft version of xxhuzhu APIs. These APIs will be used by xxhuzhu iOS App.
 
-# 保险合同
-保险合同是会员可选择加入或者退出的数据单元。每个合同对应相应的条款。对于用户来讲，加入一个合同意味着承担一定的互助责任，也同时享受一定的保险覆盖。
+#Programs
 
-## Contracts [/contracts]
-### 取得所有互助保险合同 [GET]
+A program is the smallest unit that a member can enroll. Once a member enrolls a program, 
+the member will be resposible for taking care of members in the same program who are 
+qualified for claim. The more programs a member joins, the more he/she will have to pay.
+
+## Programs [/programs]
+### Get the summary of all programs [GET]
 + Response 200 (application/json)
 
         [{
-          "id": 1, 12345
-          "Jogging in park"
+          "id": 12345, // the unique id
+          "name": "Lung Cancer"
         }, {
           "id": 2, "title": "Pick-up posters from post-office"
         }]
