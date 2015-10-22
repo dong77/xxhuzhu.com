@@ -10,13 +10,18 @@ A program is the smallest unit that a member can enroll. Once a member enrolls a
 the member will be resposible for taking care of members in the same program who are 
 qualified for claim. The more programs a member joins, the more he/she will have to pay.
 
+A program has a `open` status (true or false) indicating whether new members can enroll.
+
+A program has a `mature` status (true or false) indicating whehter qualified members can claim.
+
 ## Programs [/programs]
 ### Get the summary of all programs [GET]
 + Response 200 (application/json)
 
         [{
           "id": 12345, // the unique id
-          "name": "Lung Cancer"
+          "name": "Lung Cancer",
+          "status": "mature"
         }, {
           "id": 2, "title": "Pick-up posters from post-office"
         }]
