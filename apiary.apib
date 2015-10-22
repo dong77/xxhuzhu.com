@@ -14,6 +14,12 @@ A program has a `open` status (true or false) indicating whether new members can
 
 A program has a `mature` status (true or false) indicating whether qualified members can claim.
 
+A program has a `matureThreshold`, once the number of qualified members reached this number,
+the `mature` status shall become true.
+
+A program has a `immatureThreshold`, once the number of qualified members goes below this number, 
+the `mature` status shall become false.
+
 ## Programs [/programs]
 ### Get the summary of all programs [GET]
 + Response 200 (application/json)
