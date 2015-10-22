@@ -1,0 +1,48 @@
+FORMAT: 1A
+HOST: http://www.xxhuzhu.com
+
+# 心心互助API
+心心互助APP所用的REST API草稿。
+
+# 保险合同
+保险合同是会员可选择加入或者退出的数据单元。每个合同对应相应的条款。对于用户来讲，加入一个合同意味着承担一定的互助责任，也同时享受一定的保险覆盖。
+
+## Contracts [/contracts]
+### 取得所有互助保险合同 [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, 12345
+          "Jogging in park"
+        }, {
+          "id": 2, "title": "Pick-up posters from post-office"
+        }]
+
+### Create a Note [POST]
++ Request (application/json)
+
+        { "title": "Buy cheese and bread for breakfast." }
+
++ Response 201 (application/json)
+
+        { "id": 3, "title": "Buy cheese and bread for breakfast." }
+
+## Note [/notes/{id}]
+A single Note object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Note to perform action with. Has example value.
+
+### Retrieve a Note [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "id": 2, "title": "Pick-up posters from post-office" }
+
+### Remove a Note [DELETE]
++ Response 204
